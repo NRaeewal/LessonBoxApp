@@ -1,9 +1,13 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import CreateForm from '../../components/CreateForm/CreateForm'
 
 const CreatePage = () => {
     return (
         <div>
-            <p>Hey</p>
+            <CreateForm/>
+            <Link to='/'>Cancel</Link>
+
         </div>
     )
 }

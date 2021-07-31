@@ -9,7 +9,7 @@ const LanguagePage = (props) => {
 
 
 
-        <button type="button" class="btn btn-danger" >CREATE</button>
+        <a href="/create"><button type="button" class="btn btn-danger" >CREATE</button></a>
 
 
             <NavBar

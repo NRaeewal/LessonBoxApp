@@ -1,6 +1,6 @@
 import React from 'react'; 
 import NavBar from '../../components/NavBar/NavBar';
-
+import {Link} from 'react-router-dom';
 
 
 const MainPage = (props) => {
@@ -8,9 +8,9 @@ const MainPage = (props) => {
         <div>
 
 
-
-        <button type="button" class="btn btn-danger" >CREATE</button>
-
+            <Link to='/create'>
+                    <button type="button" class="btn btn-danger" >CREATE</button>
+            </Link>
 
             <NavBar
                 user={props.user}
