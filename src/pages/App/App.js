@@ -9,7 +9,12 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage'
 import MainPage from '../Main/Main';
 import MathPage from '../Math/Math';
+import LanguagePage from '../LanguageArts/LanguageArts';
+import SocialPage from '../Social/SocialPage';
+import SciencePage from '../Science/SciencePage';
+import CreatePage from '../CreatePage/CreatePage';
 
+import OtherPage from '../Other/OtherPage';
 
 class App extends Component {
   constructor() {
@@ -47,7 +52,36 @@ class App extends Component {
         handleLogout={this.handleLogout}
         />
       }/>
-
+      <Route exact path='/la' render={() =>
+        <LanguagePage
+        user={this.state.user}
+        handleLogout={this.handleLogout}
+        />
+      }/>
+      <Route exact path='/social' render={() =>
+        <SocialPage
+        user={this.state.user}
+        handleLogout={this.handleLogout}
+        />
+      }/>
+      <Route exact path='/science' render={() =>
+        <SciencePage
+        user={this.state.user}
+        handleLogout={this.handleLogout}
+        />
+      }/>
+        <Route exact path='/other' render={() =>
+        <OtherPage
+        user={this.state.user}
+        handleLogout={this.handleLogout}
+        />
+      }/>
+        <Route exact path='/create' render={() =>
+        <CreatePage
+        user={this.state.user}
+        handleLogout={this.handleLogout}
+        />
+      }/>
       <Route exact path='/signup' render={() => 
             <SignupPage
               handleSignupOrLogin={this.handleSignupOrLogin}

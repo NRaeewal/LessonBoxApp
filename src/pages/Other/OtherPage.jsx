@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'; 
 import NavBar from '../../components/NavBar/NavBar';
 
 
 
-const LanguagePage = (props) => {
+const OtherPage = (props) => {
     return (
         <div>
 
@@ -16,9 +16,10 @@ const LanguagePage = (props) => {
                 user={props.user}
                 handleLogout={props.handleLogout}/>
 
-These are LA resources
+These are other resources
         </div>
     )
 };
 
-export default LanguagePage;
+
+export default OtherPage;
