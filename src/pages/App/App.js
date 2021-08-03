@@ -65,6 +65,8 @@ async componentDidMount() {
         <MathPage
         user={this.state.user}
         handleLogout={this.handleLogout}
+        lessons={this.state.lessons}
+        handleUpdateLessons={this.handleUpdateLessons}
         />
       }/>
       <Route exact path='/la' render={() =>

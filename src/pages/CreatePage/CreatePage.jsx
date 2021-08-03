@@ -15,19 +15,9 @@ class CreatePage extends Component {
 }
 
 render() {
-
-    const lessonShow = this.props.lessons.map((lesson, idx )=> 
-    <p>{lesson.name}</p>
-    
-    )
-
-
-
-
     return (
         <div>
             <CreateForm/>
-            <p>{lessonShow}</p>
             <Link to='/'>Cancel</Link>
 
         </div>
