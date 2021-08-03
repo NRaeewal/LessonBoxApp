@@ -3,6 +3,7 @@ const router = express.Router()
 const User = require('../../models/user');
 const usersCtrl = require('../../controllers/users');
 
+
 // Public 
 
 router.post('/signup', usersCtrl.signup)

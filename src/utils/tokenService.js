@@ -1,3 +1,4 @@
+
 function setToken(token) {
     if (token) {
       localStorage.setItem('token', token);
@@ -6,7 +7,7 @@ function setToken(token) {
     }
   }
   
-  function getToken() {
+function getToken() {
     let token = localStorage.getItem('token');
     if (token) {
       // Check if expired, remove if it is

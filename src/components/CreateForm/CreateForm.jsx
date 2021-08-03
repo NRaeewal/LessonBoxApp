@@ -1,26 +1,29 @@
-import React, { Component, Label } from 'react';
+import { useState } from 'react';
 
 
-class CreateForm extends Component {
-    state = {
-        name: '',
-        grade: '',
-        subject: '',
-        materials: '',
-        time: '',
-        information: '',
-        links: '',
-        attachments: ''
-    };
+const CreateForm =() => {
 
-render() {
+const [name, setName] = useState('hello');
+
+const handleSubmit = (e) => {
+e.preventDefault();
+const lessonplan = {name};
+fetch('/api/lessons/', {
+    method: 'POST',
+    headers: {'Content-type': 'application/json'},
+    body: JSON.stringify(lessonplan)
+}
+).then(() => console.log('new lessonplan'))
+}
+
     return(
         <div>            
         <header><h2>Create a Lesson Plan</h2></header><br></br>
 
-        <form>
-            Name: <input type="text" placeholder="Name" value='' name='name' onChange=''/><br></br>
-            <h5>Select a Subject</h5>
+        <form onSubmit= {handleSubmit}>
+            Name: <input type="text" placeholder="Name" value={name} name="name" onChange={(e)=> setName(e.target.value)}/><br></br>
+                       
+            {/* <h5>Select a Subject</h5>
             <input type="radio" id='math' value='Math' name='grade' onChange=''/> Math <br></br>
             <input type="radio" id='math' value='Math' name='grade' onChange=''/> Language Arts <br></br>
             <input type="radio" id='math' value='Math' name='grade' onChange=''/> Social Studies  <br></br>
@@ -51,19 +54,18 @@ render() {
             Time: <input type="text" placeholder="Time" value='' name='time' onChange=''/><br></br>
             Lesson Information: <input type="text" placeholder="Information" value='' name='information' onChange=''/><br></br>
             Helpful Links: <input type="text" placeholder="Links" value='' name='links' onChange=''/><br></br>
-            <input type="text" placeholder="Attachments" value='' name='attachments' onChange=''/><br></br>
+            <input type="text" placeholder="Attachments" value='' name='attachments' onChange=''/><br></br> */}
 
 
             <button className="btn btn-default" disabled=''>Submit Your Plan</button>
 
         </form>
         
-        
         </div>
 
 
     )
-}
+
 
 };
 
