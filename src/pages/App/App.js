@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 import userService from '../../utils/userService';
 import tokenService from '../../utils/tokenService';
+import lessonService from '../../utils/lessonService';
 
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage'
@@ -21,6 +22,8 @@ class App extends Component {
     super();
     this.state = {
 
+      lessons: [],
+
       // Initialize user if there's a token, otherwise null
       user: userService.getUser()
     };
@@ -34,6 +37,18 @@ class App extends Component {
   handleSignupOrLogin = () => {
     this.setState({user: userService.getUser()});
   }
+
+  handleUpdateLessons = (lessons) => {
+    this.setState({lessons})
+  }
+
+
+async componentDidMount() {
+  const lessons = await lessonService.index();
+  this.setState({lessons});
+}
+
+
 
   render() {
     return (
@@ -80,6 +95,8 @@ class App extends Component {
         <CreatePage
         user={this.state.user}
         handleLogout={this.handleLogout}
+        lessons={this.state.lessons}
+        handleUpdateLessons={this.handleUpdateLessons}
         />
       }/>
       <Route exact path='/signup' render={() => 

@@ -12,6 +12,12 @@ async function create(req, res) {
   };
 
 
+async function lessonPlans(req, res){
+  const lessons = await LessonPlan.find({})
+  res.json(lessons)
+}
+
   module.exports = {
-      create
+      create,
+      lessonPlans
   }
