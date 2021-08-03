@@ -1,24 +1,84 @@
-import React from 'react';
+import React, {Component} from 'react'; 
 import NavBar from '../../components/NavBar/NavBar';
+import lessonService from '../../utils/lessonService';
+
+
+class LanguagePage extends Component {
+
+    // do I need this here?
+        async componentDidMount() {
+        const lessons = await lessonService.index()
+        this.props.handleUpdateLessons(lessons)
+    }
+    
+    render() {
+    
+        const lessonShow = this.props.lessons.map((lesson, idx )=> 
+
+    
+        <tr>
+        <td>{lesson.name}</td>
+        <td>{lesson.grade}</td>
+        <td>{lesson.subject}</td>
+        <td>{lesson.materials}</td>
+        <td>{lesson.time}</td>
+        <td>{lesson.information}</td>
+        <td>{lesson.links}</td>
+        <td>{lesson.attachments}</td>
 
 
 
-const LanguagePage = (props) => {
-    return (
-        <div>
+
+        </tr>
+        )
+    
+    
+    
+    if(this.lesson.subject === 'la') {
+        return (
+            <div>                
+                
+                <NavBar/>
+
+                <h2>Language Arts Lesson Plans</h2>
+
+{/* { this.props.lessons.name.length ?  */}
+        
+        
+
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                    <th scope="col">Lesson Name</th>
+                    <th scope="col">Grade</th>
+                    <th scope="col">Materials</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Information</th>
+                    <th scope="col">Links</th>
+                    <th scope="col">Attachments</th>
+
+                    </tr>
 
 
 
-        <a href="/create"><button type="button" class="btn btn-danger" >CREATE</button></a>
+                </thead>
+                <tbody>
+                        {lessonShow}
+                </tbody>
+
+                </table>
+ {/* : 
+
+<h3>No Math Resources Yet</h3>
 
 
-            <NavBar
-                user={props.user}
-                handleLogout={props.handleLogout}/>
 
-These are LA resources
-        </div>
-    )
-};
-
-export default LanguagePage;
+        }  */}
+                            </div>
+                        )
+                    
+                    }
+                    
+    }}
+    
+    export default LanguagePage;

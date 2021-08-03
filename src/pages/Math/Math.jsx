@@ -14,23 +14,70 @@ class MathPage extends Component {
     render() {
     
         const lessonShow = this.props.lessons.map((lesson, idx )=> 
-        <p>{lesson.name}</p>
-        
+
+    
+        <tr>
+        <td>{lesson.name}</td>
+        <td>{lesson.grade}</td>
+        <td>{lesson.materials}</td>
+        <td>{lesson.time}</td>
+        <td>{lesson.information}</td>
+        <td>{lesson.links}</td>
+        <td>{lesson.attachments}</td>
+
+
+
+
+        </tr>
         )
     
     
     
     
         return (
-            <div>
+            <div>                
+                
                 <NavBar/>
-                <p>{lessonShow}</p>
-    
-            </div>
-        )
-    
-    }
-    
+
+                <h2>Math Lesson Plans</h2>
+
+{/* { this.props.lessons.name.length ?  */}
+        
+        
+
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                    <th scope="col">Lesson Name</th>
+                    <th scope="col">Grade</th>
+                    <th scope="col">Materials</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Information</th>
+                    <th scope="col">Links</th>
+                    <th scope="col">Attachments</th>
+
+                    </tr>
+
+
+
+                </thead>
+                <tbody>
+                        {lessonShow}
+                </tbody>
+
+                </table>
+ {/* : 
+
+<h3>No Math Resources Yet</h3>
+
+
+
+        }  */}
+                            </div>
+                        )
+                    
+                    }
+                    
     }
     
     export default MathPage;

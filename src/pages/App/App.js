@@ -73,24 +73,32 @@ async componentDidMount() {
         <LanguagePage
         user={this.state.user}
         handleLogout={this.handleLogout}
+        lessons={this.state.lessons}
+        handleUpdateLessons={this.handleUpdateLessons}
         />
       }/>
       <Route exact path='/social' render={() =>
         <SocialPage
         user={this.state.user}
         handleLogout={this.handleLogout}
+        lessons={this.state.lessons}
+        handleUpdateLessons={this.handleUpdateLessons}
         />
       }/>
       <Route exact path='/science' render={() =>
         <SciencePage
         user={this.state.user}
         handleLogout={this.handleLogout}
+        lessons={this.state.lessons}
+        handleUpdateLessons={this.handleUpdateLessons}
         />
       }/>
         <Route exact path='/other' render={() =>
         <OtherPage
         user={this.state.user}
         handleLogout={this.handleLogout}
+        lessons={this.state.lessons}
+        handleUpdateLessons={this.handleUpdateLessons}
         />
       }/>
         <Route exact path='/create' render={() =>

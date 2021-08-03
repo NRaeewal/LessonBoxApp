@@ -1,25 +1,83 @@
-import React from 'react'; 
+import React, {Component} from 'react'; 
 import NavBar from '../../components/NavBar/NavBar';
+import lessonService from '../../utils/lessonService';
+
+
+class SocialPage extends Component {
+
+    // do I need this here?
+        async componentDidMount() {
+        const lessons = await lessonService.index()
+        this.props.handleUpdateLessons(lessons)
+    }
+    
+    render() {
+    
+        const lessonShow = this.props.lessons.map((lesson, idx )=> 
+
+    
+        <tr>
+        <td>{lesson.name}</td>
+        <td>{lesson.grade}</td>
+        <td>{lesson.materials}</td>
+        <td>{lesson.time}</td>
+        <td>{lesson.information}</td>
+        <td>{lesson.links}</td>
+        <td>{lesson.attachments}</td>
 
 
 
-const SocialPage = (props) => {
-    return (
-        <div>
+
+        </tr>
+        )
+    
+    
+    
+    
+        return (
+            <div>                
+                
+                <NavBar/>
+
+                <h2>Social Lesson Plans</h2>
+
+{/* { this.props.lessons.name.length ?  */}
+        
+        
+
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                    <th scope="col">Lesson Name</th>
+                    <th scope="col">Grade</th>
+                    <th scope="col">Materials</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Information</th>
+                    <th scope="col">Links</th>
+                    <th scope="col">Attachments</th>
+
+                    </tr>
 
 
 
-        <button type="button" class="btn btn-danger" >CREATE</button>
+                </thead>
+                <tbody>
+                        {lessonShow}
+                </tbody>
+
+                </table>
+ {/* : 
+
+<h3>No Math Resources Yet</h3>
 
 
-            <NavBar
-                user={props.user}
-                handleLogout={props.handleLogout}/>
 
-These are social resources
-        </div>
-    )
-};
-
-
-export default SocialPage;
+        }  */}
+                            </div>
+                        )
+                    
+                    }
+                    
+    }
+    
+    export default SocialPage;
