@@ -49,6 +49,12 @@ async componentDidMount() {
 }
 
 
+handleDeleteLessons = (index, e) => {
+  const lessons = Object.assign([], this.state.lessons);
+  lessons.splice(index, 1)
+  this.setState({lessons})
+}
+
 
   render() {
     return (
@@ -67,16 +73,21 @@ async componentDidMount() {
         handleLogout={this.handleLogout}
         lessons={this.state.lessons}
         handleUpdateLessons={this.handleUpdateLessons}
+        handleDeleteLessons={this.handleDeleteLessons}
         />
-      }/>
+      }/>{this.state.lessons.map((lesson) => { 
+        return(
       <Route exact path='/la' render={() =>
-        <LanguagePage
+      <LanguagePage
         user={this.state.user}
         handleLogout={this.handleLogout}
         lessons={this.state.lessons}
         handleUpdateLessons={this.handleUpdateLessons}
+        handleDeleteLessons={this.handleDeleteLessons}
         />
-      }/>
+
+
+      }/>)})}
       <Route exact path='/social' render={() =>
         <SocialPage
         user={this.state.user}

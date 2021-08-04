@@ -24,11 +24,8 @@ class MathPage extends Component {
         <td>{lesson.information}</td>
         <td>{lesson.links}</td>
         <td>{lesson.attachments}</td>
-
-
-
-
         </tr>
+
         )
     
     
@@ -41,7 +38,7 @@ class MathPage extends Component {
 
                 <h2>Math Lesson Plans</h2>
 
-{/* { this.props.lessons.name.length ?  */}
+            { this.props.lessons && this.props.lessons.subject === 'Math' ? 
         
         
 
@@ -62,17 +59,17 @@ class MathPage extends Component {
 
                 </thead>
                 <tbody>
-                        {lessonShow}
+                    {lessonShow}
                 </tbody>
 
                 </table>
- {/* : 
+ : 
 
 <h3>No Math Resources Yet</h3>
 
 
 
-        }  */}
+        }
                             </div>
                         )
                     

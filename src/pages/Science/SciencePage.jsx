@@ -41,7 +41,7 @@ class SciencePage extends Component {
 
                 <h2>Science Lesson Plans</h2>
 
-{/* { this.props.lessons.name.length ?  */}
+{ this.props.lesson && this.props.lesson.subject === 'Science' ?
         
         
 
@@ -66,13 +66,13 @@ class SciencePage extends Component {
                 </tbody>
 
                 </table>
- {/* : 
+ : 
 
-<h3>No Math Resources Yet</h3>
+<h3>No Science Resources Yet</h3>
 
 
 
-        }  */}
+        }  
                             </div>
                         )
                     

@@ -9,42 +9,36 @@ class LanguagePage extends Component {
         async componentDidMount() {
         const lessons = await lessonService.index()
         this.props.handleUpdateLessons(lessons)
+        }
+
+
+    onDelete = (props) => {
+        this.props.handleDeleteLessons();
     }
     
     render() {
-    
-        const lessonShow = this.props.lessons.map((lesson, idx )=> 
 
     
+        const lessonShow = this.props.lessons.map((lesson, idx )=> 
+          
         <tr>
-        <td>{lesson.name}</td>
+        <td>{lesson.name} </td><button onClick={()=>this.onDelete(lesson.__id)}>Delete Me</button>
         <td>{lesson.grade}</td>
-        <td>{lesson.subject}</td>
         <td>{lesson.materials}</td>
         <td>{lesson.time}</td>
         <td>{lesson.information}</td>
         <td>{lesson.links}</td>
         <td>{lesson.attachments}</td>
-
-
-
-
         </tr>
         )
     
-    
-    
-    if(this.lesson.subject === 'la') {
-        return (
-            <div>                
-                
+    return (    
+            <div>             
                 <NavBar/>
-
                 <h2>Language Arts Lesson Plans</h2>
 
-{/* { this.props.lessons.name.length ?  */}
-        
-        
+    {/* { this.props.lessons && this.props.lesson.subject === 'LA'  ?  */}
+              
 
                 <table class="table">
                     <thead class="thead-dark">
@@ -56,10 +50,7 @@ class LanguagePage extends Component {
                     <th scope="col">Information</th>
                     <th scope="col">Links</th>
                     <th scope="col">Attachments</th>
-
                     </tr>
-
-
 
                 </thead>
                 <tbody>
@@ -67,18 +58,13 @@ class LanguagePage extends Component {
                 </tbody>
 
                 </table>
- {/* : 
+                {/* : 
 
-<h3>No Math Resources Yet</h3>
-
-
-
-        }  */}
-                            </div>
-                        )
-                    
-                    }
-                    
-    }}
+                <h3>No LA Resources Yet</h3>
+                }   */}
+                </div>
+                 );
+                    }             
+    }
     
     export default LanguagePage;

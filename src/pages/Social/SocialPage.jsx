@@ -31,9 +31,6 @@ class SocialPage extends Component {
         </tr>
         )
     
-    
-    
-    
         return (
             <div>                
                 
@@ -41,7 +38,7 @@ class SocialPage extends Component {
 
                 <h2>Social Lesson Plans</h2>
 
-{/* { this.props.lessons.name.length ?  */}
+{ this.props.lessons && this.props.lessons.subject ==="SS" ? 
         
         
 
@@ -66,13 +63,13 @@ class SocialPage extends Component {
                 </tbody>
 
                 </table>
- {/* : 
+ : 
 
-<h3>No Math Resources Yet</h3>
+<h3>No Social Resources Yet</h3>
 
 
 
-        }  */}
+        }  
                             </div>
                         )
                     
