@@ -11,18 +11,16 @@ class LanguagePage extends Component {
         this.props.handleUpdateLessons(lessons)
         }
 
-
-    onDelete = (props) => {
-        this.props.handleDeleteLessons();
-    }
+        // onDelete = (props) => {
+            // this.props.handleDeleteLessons(lesson._id);
+        // }
     
     render() {
-
     
         const lessonShow = this.props.lessons.map((lesson, idx )=> 
           
         <tr>
-        <td>{lesson.name} </td><button onClick={()=>this.onDelete(lesson.__id)}>Delete Me</button>
+        <td>{lesson.name} <button onClick={()=>this.props.handleDeleteLessons(lesson._id)}>Delete Me</button></td>
         <td>{lesson.grade}</td>
         <td>{lesson.materials}</td>
         <td>{lesson.time}</td>

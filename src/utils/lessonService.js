@@ -9,6 +9,19 @@ function index() {
   }
 
 
+async function deleteLesson (id) {
+  const options = {
+    method: 'DELETE',
+
+  };
+  const res = await fetch(`${BASE_URL}${id}`, options)
+  // .then(res => res.json());
+  const lesson = await res.json()
+  return lesson
+}
+
+
   export default {
-    index
+    index,
+    deleteLesson
   };

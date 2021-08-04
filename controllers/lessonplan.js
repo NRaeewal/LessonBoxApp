@@ -17,7 +17,17 @@ async function lessonPlans(req, res){
   res.json(lessons)
 }
 
+function deleteLesson(req, res){
+  LessonPlan.findByIdAndDelete(req.params.id)
+  .then(function(lessonPlan) {return LessonPlan.find({}) })  //looked trough lessons after deleting , sending it to next fn
+  .then(function(lessonPlan) {res.json(lessonPlan)}) // now making a res.json of changed lessonPlans 
+  
+}
+
+
+
   module.exports = {
       create,
-      lessonPlans
+      lessonPlans,
+      delete: deleteLesson
   }
