@@ -51,8 +51,6 @@ class App extends Component {
   }
 
 
-
-
 handleDeleteLessons = async (id) => {
   const lessonPlans = await lessonService.deleteLesson(id)
   // const lessons = Object.assign([], this.state.lessons);

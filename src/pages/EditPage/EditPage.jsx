@@ -1,24 +1,29 @@
 import { render } from '@testing-library/react';
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import EditForm from '../../components/EditForm/EditForm'
-import lessonService from '../../utils/lessonService';
+import {useState, useEffect} from 'react';
 
 
 
-class EditPage extends Component {
+function EditPage(props)
 
-// do I need this here?
-    async componentDidMount() {
-    const lessons = await lessonService.index()
-    this.props.handleUpdateLessons(lessons)
-}
+{
+    const[data, setData]=useState([])
 
-render() {
-    return (
+    const lessonShow = props.lessons.map((lesson, idx )=> 
+
+    lesson._id)
+
+    
+// console.log(props}
+
+ return (
         <div>
-            <EditForm
-            history = {this.props.history}/>
+        
+        <input type="text" defaultValue={lessonShow}/>
+
+
             <Link to='/'>Cancel</Link>
 
         </div>
@@ -26,6 +31,4 @@ render() {
 
 }
 
-}
-
-export default EditPage;
+export default withRouter(EditPage);
