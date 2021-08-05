@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import {Link} from 'react-router-dom';
+import './CreateForm.css'
 
-
-const CreateForm =() => {
+const CreateForm =(props) => {
 
 const [name, setName] = useState('');
 const [subject, setSubject] = useState('');
@@ -69,7 +69,7 @@ fetch('/api/lessons/', {
             Helpful Links: <input type="text" placeholder="Links" value={links} name='links' onChange={(e) => setLinks(e.target.value)}/><br></br>
             <input type="text" placeholder="Attachments" value={attachments} name='attachments' onChange={(e) => setAttachments(e.target.value)}/><br></br>
 
-            <button className="btn btn-default" disabled=''>Submit Your Plan</button>
+            <button disabled=''>Submit Your Plan</button>
 
         </form>
         

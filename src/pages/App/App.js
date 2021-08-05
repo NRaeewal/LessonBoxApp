@@ -58,6 +58,10 @@ handleDeleteLessons = async (id) => {
   this.setState({lessons: lessonPlans})
 }
 
+firstLesson() {
+  const first = this.state.lessons[0]
+  return {first}
+}
 
 
   render() {
@@ -67,6 +71,8 @@ handleDeleteLessons = async (id) => {
       <Switch>
       <Route exact path='/' render={() =>
         <MainPage
+        lessons={this.state.lessons}
+        firstLesson={this.firstLesson}
         user={this.state.user}
         handleLogout={this.handleLogout}
         />

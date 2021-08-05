@@ -5,7 +5,7 @@ import './Header.css';
 function Header (props) {
     return (
         <div>
-        <h1 className="Header-title">Lesson Box</h1>
+        <Link to="/"><h1 className="Header-title">Lesson Box</h1></Link>
         </div>
     )
 };

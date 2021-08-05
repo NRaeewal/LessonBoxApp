@@ -5,6 +5,7 @@ import Header from '../../components/Header/Header';
 import CreateButton from '../../components/Button/Button';
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
+import './Main.css'
 
 
 const MainPage = (props) => {
@@ -12,6 +13,14 @@ const MainPage = (props) => {
     <div><h2>Take a look at what's new!</h2></div>
     :
     <div><h2>Welcome, please login to find some FREE resources!</h2></div>
+
+        
+    const lessonShow = props.lessons.map((lesson, idx )=> 
+          
+    <tr>
+    <td>{lesson.name} </td>
+    <td>{lesson.grade}</td></tr>)
+
 
     return (
         <div>
@@ -23,17 +32,18 @@ const MainPage = (props) => {
             <CreateButton/>
             {message}
 
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+            <Card className="Card" style={{ width: '64.5rem' }}>
+                <Card.Img align="center" variant="top" src="https://i.ibb.co/DCRYLmP/tim-mossholder-WE-Kv-ZB1l0-unsplash.jpg" alt="tim-mossholder-WE-Kv-ZB1l0-unsplash" border="0" />
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>{lessonShow}</Card.Title>
                     <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
+                    Try this lesson!
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    {/* <Button variant="primary">Go somewhere</Button> */}
                 </Card.Body>
             </Card>
+
+        
         </div>
     )
 };
