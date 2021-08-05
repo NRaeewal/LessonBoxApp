@@ -19,15 +19,20 @@ async function lessonPlans(req, res){
 
 function deleteLesson(req, res){
   LessonPlan.findByIdAndDelete(req.params.id)
-  .then(function(lessonPlan) {return LessonPlan.find({}) })  //looked trough lessons after deleting , sending it to next fn
+  .then(function(lessonPlan) {return LessonPlan.find({})})  //looked through lessons after deleting , sending it to next fn
   .then(function(lessonPlan) {res.json(lessonPlan)}) // now making a res.json of changed lessonPlans 
-  
 }
 
+
+function show (req, res){
+  LessonPlan.findById(req.params.id)  // find by id
+  .then(function(lessonPlan) {res.json(lessonPlan)}) // make a res.json of this lesson plan
+}                                                    // WORKS!!! I can see in postman
 
 
   module.exports = {
       create,
       lessonPlans,
-      delete: deleteLesson
+      delete: deleteLesson,
+      show
   }

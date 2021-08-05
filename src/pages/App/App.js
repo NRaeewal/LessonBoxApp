@@ -14,6 +14,8 @@ import LanguagePage from '../LanguageArts/LanguageArts';
 import SocialPage from '../Social/SocialPage';
 import SciencePage from '../Science/SciencePage';
 import CreatePage from '../CreatePage/CreatePage';
+import EditPage from '../EditPage/EditPage';
+
 
 import OtherPage from '../Other/OtherPage';
 
@@ -42,12 +44,13 @@ class App extends Component {
   handleUpdateLessons = (lessons) => {
     this.setState({lessons})
   }
+  
+  async componentDidMount() {
+    const lessons = await lessonService.index();
+    this.setState({lessons});
+  }
 
 
-async componentDidMount() {
-  const lessons = await lessonService.index();
-  this.setState({lessons});
-}
 
 
 handleDeleteLessons = async (id) => {
@@ -56,6 +59,7 @@ handleDeleteLessons = async (id) => {
   // lessons.splice(index, 1)
   this.setState({lessons: lessonPlans})
 }
+
 
 
   render() {
@@ -116,6 +120,15 @@ handleDeleteLessons = async (id) => {
       }/>
         <Route exact path='/create' render={(props) =>
         <CreatePage
+        user={this.state.user}
+        handleLogout={this.handleLogout}
+        lessons={this.state.lessons}
+        handleUpdateLessons={this.handleUpdateLessons}
+        history = {props.history}
+        />
+      }/>
+        <Route exact path='/update/:id' render={(props) =>
+        <EditPage
         user={this.state.user}
         handleLogout={this.handleLogout}
         lessons={this.state.lessons}

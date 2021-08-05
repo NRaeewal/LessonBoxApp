@@ -1,3 +1,6 @@
+// the stuff in this file is to get things to happen in the frontend? Import these into App.js to use 
+
+
 const BASE_URL = '/api/lessons/'
 
 function index() {

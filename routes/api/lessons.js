@@ -11,4 +11,7 @@ router.post('/', lessonCtrl.create)
 
 router.delete('/:id', lessonCtrl.delete)
 
+router.get('/:id', lessonCtrl.show)
+
+
 module.exports = router;
