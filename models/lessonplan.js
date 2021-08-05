@@ -9,7 +9,8 @@ const lessonSchema = new Schema({
     time: Number,
     information: String,
     links: String,
-    attachments: String
+    attachments: String,
+    favourite: Boolean
 });
 
 module.exports = mongoose.model('Lesson', lessonSchema)

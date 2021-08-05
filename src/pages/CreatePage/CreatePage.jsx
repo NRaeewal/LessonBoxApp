@@ -17,7 +17,8 @@ class CreatePage extends Component {
 render() {
     return (
         <div>
-            <CreateForm/>
+            <CreateForm
+            history = {this.props.history}/>
             <Link to='/'>Cancel</Link>
 
         </div>

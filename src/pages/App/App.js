@@ -23,6 +23,7 @@ class App extends Component {
     this.state = {
 
       lessons: [],
+      newLessons: [''],
 
       // Initialize user if there's a token, otherwise null
       user: userService.getUser()
@@ -113,12 +114,13 @@ handleDeleteLessons = async (id) => {
         handleUpdateLessons={this.handleUpdateLessons}
         />
       }/>
-        <Route exact path='/create' render={() =>
+        <Route exact path='/create' render={(props) =>
         <CreatePage
         user={this.state.user}
         handleLogout={this.handleLogout}
         lessons={this.state.lessons}
         handleUpdateLessons={this.handleUpdateLessons}
+        history = {props.history}
         />
       }/>
       <Route exact path='/signup' render={(props) => 

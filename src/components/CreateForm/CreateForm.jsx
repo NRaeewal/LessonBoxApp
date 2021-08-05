@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {Link} from 'react-router-dom';
 
 
 const CreateForm =() => {
@@ -18,6 +19,7 @@ const [attachments, setAttachments] = useState('');
 const handleSubmit = (e) => {
 e.preventDefault();
 const lessonplan = {name, subject, grade, materials, time, information, links, attachments};
+
 fetch('/api/lessons/', {
     method: 'POST',
     headers: {'Content-type': 'application/json'},
@@ -43,8 +45,8 @@ fetch('/api/lessons/', {
 
             <h5>Select a Grade</h5>
             
-            <select name='subject' value={grade} onChange={(e)=> setGrade(e.target.value)}>
-            <option value="Kindergarten">Kindergarten</option>
+            <select name='subject' value='Kindergarten' onChange={(e)=> setGrade(e.target.value)}>
+            <option value="KG">Kindergarten</option>
             <option value='Grade 1'>Grade 1</option>
             <option value="Grade 2">Grade 2</option>
             <option value="Grade 3">Grade 3</option>
@@ -66,7 +68,6 @@ fetch('/api/lessons/', {
             Lesson Information: <input type="text" placeholder="Information" value={information} name='information' onChange={(e) => setInformation(e.target.value)}/><br></br>
             Helpful Links: <input type="text" placeholder="Links" value={links} name='links' onChange={(e) => setLinks(e.target.value)}/><br></br>
             <input type="text" placeholder="Attachments" value={attachments} name='attachments' onChange={(e) => setAttachments(e.target.value)}/><br></br>
-
 
             <button className="btn btn-default" disabled=''>Submit Your Plan</button>
 

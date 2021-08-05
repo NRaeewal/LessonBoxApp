@@ -20,8 +20,24 @@ async function deleteLesson (id) {
   return lesson
 }
 
+function handleUpdateLessons(id){
+  return fetch(`${BASE_URL}${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(id)
+     }).then(res=> res.json())
+}
+
+function handleSaveLesson(lesson){
+  return lesson.id ? handleUpdateLessons() : index()
+}
+
 
   export default {
     index,
-    deleteLesson
+    deleteLesson,
+    handleUpdateLessons,
+    handleSaveLesson
   };
