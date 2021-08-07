@@ -26,6 +26,7 @@ fetch('/api/lessons/', {
     body: JSON.stringify(lessonplan)
 }
 ).then(() => console.log(lessonplan))
+
 }
 
 

@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Lesson Box
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+- About
+- ERD
+- Wireframes
+- Screenshots
+- Technologies Used
+- Getting Started
+- Next Steps
 
-## Available Scripts
+## About 
+Lesson Box is a full stack application using the MERN stack. 
 
-In the project directory, you can run:
+My goal for this project was to create a collection of lesson plans for teachers. Users can either share their own ideas or give links to free lesson plans that already exist. 
 
-### `npm start`
+## ERD
+<a href="https://ibb.co/stJLXhV"><img src="https://i.ibb.co/stJLXhV/lessonboxerd.jpg" alt="lessonboxerd" border="0" /></a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Wireframes 
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/qs7T6yB/lessonboxwireframes.jpg" alt="lessonboxwireframes" border="0" /></a>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots 
 
-### `npm run build`
+### Main Page
+<a href="https://ibb.co/PCw41LD"><img src="https://i.ibb.co/SvR0Vjf/lessonboxmain.jpg" alt="lessonboxmain" border="0"></a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Create a lesson plan
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/tcPSVWR/lessonboxcreate.jpg" alt="lessonboxcreate" border="0" /></a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### View the subject specific lesson plan
+<a href="https://ibb.co/TRjtRqF"><img src="https://i.ibb.co/TRjtRqF/lessonboxshow.jpg" alt="lessonboxshow" border="0" /></a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Technologies Used 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React 
+- NodeJS 
+- MongoDB
+- Bootstrap 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Getting Started 
+Check out the website at: https://lessonbox.herokuapp.com/
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Next Steps 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The following are some items I will continue working on:
 
-### Code Splitting
+- Clear form on submit 
+- Complete edit functionality 
+- A show page for the lesson plans 
+- Main Page UI 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

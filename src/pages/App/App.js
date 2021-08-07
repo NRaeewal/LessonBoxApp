@@ -71,6 +71,7 @@ firstLesson() {
       <Switch>
       <Route exact path='/' render={() =>
         <MainPage
+        
         lessons={this.state.lessons}
         firstLesson={this.firstLesson}
         user={this.state.user}
@@ -153,7 +154,7 @@ firstLesson() {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
       }/>
-</Switch>
+      </Switch>
       </div>
     );
   }
