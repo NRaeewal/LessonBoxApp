@@ -19,10 +19,10 @@ app.use(express.json());
 // Configure both serve-favicon & static middlewares
 // to serve from the production 'build' folder
 
-if(process.env.NODE_ENV==='production'){
+// if(process.env.NODE_ENV==='production'){
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
-}
+// }
 
 
 // api routes
