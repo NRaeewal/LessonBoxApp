@@ -27,12 +27,17 @@ function deleteLesson(req, res){
 function show (req, res){
   LessonPlan.findById(req.params.id)  // find by id
   .then(function(lessonPlan) {res.json(lessonPlan)}) // make a res.json of this lesson plan
-}                                                    // WORKS!!! I can see in postman
+} // WORKS!!! I can see in postman
 
+function update (req, res){
+  LessonPlan.findByIdAndUpdate(req.params.id, req.body, {new:true})
+  .then(function(lessonPlan) {res.json(lessonPlan)})
+} // is working on postman!
 
   module.exports = {
       create,
       lessonPlans,
       delete: deleteLesson,
-      show
+      show,
+      update
   }

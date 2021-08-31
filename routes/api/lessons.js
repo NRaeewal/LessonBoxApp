@@ -13,5 +13,7 @@ router.delete('/:id', lessonCtrl.delete)
 
 router.get('/:id', lessonCtrl.show)
 
+router.put('/:id', lessonCtrl.update)
+
 
 module.exports = router;
